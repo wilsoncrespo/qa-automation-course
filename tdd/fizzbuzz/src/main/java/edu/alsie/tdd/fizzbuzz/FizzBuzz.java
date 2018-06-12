@@ -1,13 +1,14 @@
 package edu.alsie.tdd.fizzbuzz;
 
 public class FizzBuzz {
+
   public boolean isFizz(int number)
   {
-    return (number % 3) == 0 ;
+    return ((number % 3) == 0 || Integer.toString(number).contains("3") && !(isBuzz(number)));
   }
 
   public boolean isBuzz(int number) {
-    return (number % 5) == 0;
+    return ((number % 5) == 0|| Integer.toString(number).contains("5"));
   }
 
   public boolean isFizzBuzz(int number){

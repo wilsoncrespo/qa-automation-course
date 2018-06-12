@@ -88,5 +88,28 @@ public class FizzBuzzTest {
     Assert.assertEquals(expected, actual);
   }
 
+  @Test
+  public void testGiven13ThenIsFizz() {
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    Assert.assertTrue(fizzBuzz.isFizz(13));
+  }
+
+  @Test
+  public void testGiven31ThenIsFizz() {
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    Assert.assertTrue(fizzBuzz.isFizz(31));
+  }
+
+  @Test
+  public void testGiven51ThenIsBuzz() {
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    Assert.assertTrue(fizzBuzz.isBuzz(51));
+  }
+
+  @Test
+  public void testGiven53ThenIsNotFizzBuzz() {
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    Assert.assertFalse(fizzBuzz.isFizzBuzz(53));
+  }
 
 }

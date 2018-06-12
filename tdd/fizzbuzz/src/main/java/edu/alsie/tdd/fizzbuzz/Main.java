@@ -4,7 +4,7 @@ public class Main {
 
   public static void main(String[] args) {
     FizzBuzz fizzBuzz = new FizzBuzz();
-    for(int i = 0; i<=100; i++){
+    for(int i = 0; i<=Integer.MAX_VALUE; i++){
       System.out.println(fizzBuzz.print(i));
     }
   }
