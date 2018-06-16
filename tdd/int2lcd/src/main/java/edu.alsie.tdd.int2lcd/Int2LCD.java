@@ -33,6 +33,6 @@ public class Int2LCD {
         return new int[]{1,1,1,1,1,1,1};
     }
     public int[] getNineLCDCell() {
-        return new int[]{1,1,1,1,0,0,1};
+        return new int[]{1,1,1,1,0,1,1};
     }
 }
