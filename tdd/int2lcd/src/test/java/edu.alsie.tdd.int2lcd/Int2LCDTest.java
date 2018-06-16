@@ -39,7 +39,7 @@ public class Int2LCDTest {
     public void testLCDCellIsOne()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getOneLCDCell();
+        int[] oneLCDCell = int2LCD.getOneLCDCell();
         /**
          *
          *                0
@@ -47,9 +47,9 @@ public class Int2LCDTest {
          *   |          0 0 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{0,0,0,1,0,0,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = oneLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -57,7 +57,7 @@ public class Int2LCDTest {
     public void testLCDCellIsTwo()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getTwoLCDCell();
+        int[] twoLCDCell = int2LCD.getTwoLCDCell();
         /**
          *
          *  _             1
@@ -65,9 +65,9 @@ public class Int2LCDTest {
          * |_           1 1 0
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,0,1,1,1,1,0};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = twoLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -75,7 +75,7 @@ public class Int2LCDTest {
     public void testLCDCellIsThree()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getThreeLCDCell();
+        int[] threeLCDCell = int2LCD.getThreeLCDCell();
         /**
          *
          *  _             1
@@ -83,9 +83,9 @@ public class Int2LCDTest {
          *  _|          0 1 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,0,1,1,0,1,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = threeLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -93,7 +93,7 @@ public class Int2LCDTest {
     public void testLCDCellIsFour()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getFourLCDCell();
+        int[] fourLCDCell = int2LCD.getFourLCDCell();
         /**
          *
          *                0
@@ -101,9 +101,9 @@ public class Int2LCDTest {
          *   |          0 0 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{0,1,1,1,0,0,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = fourLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -111,7 +111,7 @@ public class Int2LCDTest {
     public void testLCDCellIsFive()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getFiveLCDCell();
+        int[] fiveLCDCell = int2LCD.getFiveLCDCell();
         /**
          *
          *  _             1
@@ -119,9 +119,9 @@ public class Int2LCDTest {
          *  _|          0 1 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,1,1,0,0,1,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = fiveLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -129,7 +129,7 @@ public class Int2LCDTest {
     public void testLCDCellIsSix()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getSixLCDCell();
+        int[] sixLCDCell = int2LCD.getSixLCDCell();
         /**
          *
          *  _             1
@@ -137,9 +137,9 @@ public class Int2LCDTest {
          * |_|          1 1 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,1,1,0,1,1,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = sixLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -147,7 +147,7 @@ public class Int2LCDTest {
     public void testLCDCellIsSeven()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getSevenLCDCell();
+        int[] secenLCDCell = int2LCD.getSevenLCDCell();
         /**
          *
          *  _             1
@@ -155,9 +155,9 @@ public class Int2LCDTest {
          *   |          0 0 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,0,0,1,0,0,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = secenLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -165,7 +165,7 @@ public class Int2LCDTest {
     public void testLCDCellIsEight()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getEightLCDCell();
+        int[] eigthLCDCell = int2LCD.getEightLCDCell();
         /**
          *
          *  _             1
@@ -173,9 +173,9 @@ public class Int2LCDTest {
          * |_|          1 1 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,1,1,1,1,1,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = eigthLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
@@ -183,7 +183,7 @@ public class Int2LCDTest {
     public void testLCDCellIsNine()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getNineLCDCell();
+        int[] nineLCDCell = int2LCD.getNineLCDCell();
         /**
          *
          *  _             1
@@ -191,9 +191,9 @@ public class Int2LCDTest {
          *   |          0 0 1
          *
          */
-        int[] expected = new int[]{1,1,0,1,1,1,1};
+        int[] expected = new int[]{1,1,1,1,0,0,1};
 
-        int[] actual = zeroLCDCell;
+        int[] actual = nineLCDCell;
 
         Assert.assertArrayEquals(expected, actual);
     }
