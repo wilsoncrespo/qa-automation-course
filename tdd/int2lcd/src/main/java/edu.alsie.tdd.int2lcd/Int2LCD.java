@@ -18,7 +18,7 @@ public class Int2LCD {
         return new int[]{1,0,1,1,0,1,1};
     }
     public int[] getFourLCDCell() {
-        return new int[7];
+        return new int[]{0,1,1,1,0,0,1};
     }
     public int[] getFiveLCDCell() {
         return new int[7];
