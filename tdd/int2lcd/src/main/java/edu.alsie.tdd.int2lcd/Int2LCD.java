@@ -12,7 +12,7 @@ public class Int2LCD {
         return new int[]{0,0,0,1,0,0,1};
     }
     public int[] getTwoLCDCell() {
-        return new int[7];
+        return new int[]{1,0,1,1,1,1,0};
     }
     public int[] getThreeLCDCell() {
         return new int[7];
