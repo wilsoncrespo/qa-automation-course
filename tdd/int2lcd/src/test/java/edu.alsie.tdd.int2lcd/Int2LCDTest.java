@@ -197,4 +197,23 @@ public class Int2LCDTest {
 
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testStringValueForDigitZero()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] zeroLCDCellStringValue = int2LCD.getZeroLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         * | |    =>    1 0 1    =>    1101111    =>    " _ ", "| |", "|_|"
+         * |_|          1 1 1
+         *
+         */
+        String[] expected = new String[]{" _ ", "| |", "|_|"};
+
+        String[] actual = zeroLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 }
