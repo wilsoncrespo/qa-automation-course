@@ -21,7 +21,7 @@ public class Int2LCDTest {
     public void testLCDCellIsZero()
     {
         Int2LCD int2LCD = new Int2LCD();
-        int[] zeroLCDCell = int2LCD.getEmptyLCDCell();
+        int[] zeroLCDCell = int2LCD.getZeroLCDCell();
         /**
          *
          *  _             1
