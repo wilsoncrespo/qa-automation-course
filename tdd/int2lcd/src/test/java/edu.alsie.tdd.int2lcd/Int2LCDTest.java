@@ -187,11 +187,11 @@ public class Int2LCDTest {
         /**
          *
          *  _             1
-         * |_|    =>    1 1 1    =>    1111001
-         *   |          0 0 1
+         * |_|    =>    1 1 1    =>    1111011
+         *  _|          0 1 1
          *
          */
-        int[] expected = new int[]{1,1,1,1,0,0,1};
+        int[] expected = new int[]{1,1,1,1,0,1,1};
 
         int[] actual = nineLCDCell;
 
