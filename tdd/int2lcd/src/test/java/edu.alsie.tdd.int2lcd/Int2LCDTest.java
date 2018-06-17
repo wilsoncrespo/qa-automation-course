@@ -387,4 +387,23 @@ public class Int2LCDTest {
 
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testGet123AsLCDList()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        int[] oneLCDCell = int2LCD.getOneLCDCell();
+        /**
+         *
+         *     _  _             0    1    1
+         *   | _| _|    =>    0 0 10 1 10 1 1    =>    [[0001001], [1011110], [1011011]]
+         *   ||_  _|          0 0 11 1 00 1 1
+         *
+         */
+        int[][] expected = {{0,0,0,1,0,0,1}, {1,0,1,1,1,1,0}, {1,0,1,1,0,1,1}};
+
+        int[][] actual = getNumberAsLCDList(123);
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 }
