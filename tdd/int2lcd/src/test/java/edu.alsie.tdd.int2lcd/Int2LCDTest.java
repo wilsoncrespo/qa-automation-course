@@ -216,4 +216,175 @@ public class Int2LCDTest {
 
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testStringValueForDigitOne()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] oneLCDCellStringValue = int2LCD.getOneLCDCellStringValue();
+        /**
+         *
+         *                0
+         *   |    =>    0 0 1    =>    0001001    =>    "   ", "  |", "  |"
+         *   |          0 0 1
+         *
+         */
+        String[] expected = new String[]{"   ", "  |", "  |"};
+
+        String[] actual = oneLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitTwo()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] twoLCDCellStringValue = int2LCD.getTwoLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         *  _|    =>    0 1 1    =>    1011110    =>    " _ ", " _|", "|_ "
+         * |_           1 1 0
+         *
+         */
+        String[] expected = new String[]{" _ ", " _|", "|_ "};
+
+        String[] actual = twoLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitThree()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] threeLCDCellStringValue = int2LCD.getThreeLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         *  _|    =>    0 1 1    =>    1011011    =>    " _ ", " _|", " _|"
+         *  _|          0 1 1
+         *
+         */
+        String[] expected = new String[]{" _ ", " _|", " _|"};
+
+        String[] actual = threeLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitFour()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] fourLCDCellStringValue = int2LCD.getFourLCDCellStringValue();
+        /**
+         *
+         *                0
+         * |_|    =>    1 1 1    =>    0111001    =>    "   ", "|_|", "  |"
+         *   |          0 0 1
+         *
+         */
+        String[] expected = new String[]{"   ", "|_|", "  |"};
+
+        String[] actual = fourLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitFive()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] fiveLCDCellStringValue = int2LCD.getFiveLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         * |_     =>    1 1 0    =>    1110011    =>    " _ ", "|_ ", " _|"
+         *  _|          0 1 1
+         *
+         */
+        String[] expected = new String[]{" _ ", "|_ ", " _|"};
+
+        String[] actual = fiveLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitSix()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] sixLCDCellStringValue = int2LCD.getSixLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         * |_     =>    1 1 0    =>    1110111    =>    " _ ", "|_ ", "|_|"
+         * |_|          1 1 1
+         *
+         */
+        String[] expected = new String[]{" _ ", "|_ ", "|_|"};
+
+        String[] actual = sixLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitSeven()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] sevenLCDCellStringValue = int2LCD.getSevenLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         *   |    =>    0 0 1    =>    1001001    =>    " _ ", "  |", "  |"
+         *   |          0 0 1
+         *
+         */
+        String[] expected = new String[]{" _ ", "  |", "  |"};
+
+        String[] actual = sevenLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitEight()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] eightLCDCellStringValue = int2LCD.getEightLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         * |_|    =>    1 1 1    =>    1111111    =>    " _ ", "|_|", "|_|"
+         * |_|          1 1 1
+         *
+         */
+        String[] expected = new String[]{" _ ", "|_|", "|_|"};
+
+        String[] actual = eightLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testStringValueForDigitNine()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        String[] nineLCDCellStringValue = int2LCD.getNineLCDCellStringValue();
+        /**
+         *
+         *  _             1
+         * |_|    =>    1 1 1    =>    1111011    =>    " _ ", "|_|", " _|"
+         *  _|          0 1 1
+         *
+         */
+        String[] expected = new String[]{" _ ", "|_|", " _|"};
+
+        String[] actual = nineLCDCellStringValue;
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 }
