@@ -42,6 +42,60 @@ public class Int2LCD {
         return convertValuesToString(zeroLCDCellValue);
     }
 
+    public String[] getOneLCDCellStringValue()
+    {
+        int[] oneLCDCellValue = getOneLCDCell();
+        return convertValuesToString(oneLCDCellValue);
+    }
+
+    public String[] getTwoLCDCellStringValue()
+    {
+        int[] twoLCDCellValue = getTwoLCDCell();
+        return convertValuesToString(twoLCDCellValue);
+    }
+
+    public String[] getThreeLCDCellStringValue()
+    {
+        int[] threeLCDCellValue = getThreeLCDCell();
+        return convertValuesToString(threeLCDCellValue);
+    }
+
+    public String[] getFourLCDCellStringValue()
+    {
+        int[] fourLCDCellValue = getFourLCDCell();
+        return convertValuesToString(fourLCDCellValue);
+    }
+
+    public String[] getFiveLCDCellStringValue()
+    {
+        int[] fiveLCDCellValue = getFiveLCDCell();
+        return convertValuesToString(fiveLCDCellValue);
+    }
+
+    public String[] getSixLCDCellStringValue()
+    {
+        int[] sixLCDCellValue = getSixLCDCell();
+        return convertValuesToString(sixLCDCellValue);
+    }
+
+    public String[] getSevenLCDCellStringValue()
+    {
+        int[] sevenLCDCellValue = getSevenLCDCell();
+        return convertValuesToString(sevenLCDCellValue);
+    }
+
+    public String[] getEightLCDCellStringValue()
+    {
+        int[] eightLCDCellValue = getEightLCDCell();
+        return convertValuesToString(eightLCDCellValue);
+    }
+
+    public String[] getNineLCDCellStringValue()
+    {
+        int[] nineLCDCellValue = getNineLCDCell();
+        return convertValuesToString(nineLCDCellValue);
+    }
+
     private String[] convertValuesToString(int[] lcdCellValue)
     {
         String[] stringCellValue = new String[3];
