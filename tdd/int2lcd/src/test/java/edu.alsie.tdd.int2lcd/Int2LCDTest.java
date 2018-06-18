@@ -442,4 +442,28 @@ public class Int2LCDTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testGivenWidth3AndHeight2Get123AsLCDStringRenderedValue()
+    {
+        /**     ___  ___
+         *    |    |    |
+         *    |    |    |
+         *      ___  ___
+         *    ||        |
+         *    ||        |
+         *      ___  ___
+         */
+        Int2LCD int2LCD = new Int2LCD(3, 2);
+        String expected = "      ___  ___ \n" +
+                          "    |    |    |\n" +
+                          "    |    |    |\n" +
+                          "      ___  ___ \n" +
+                          "    ||        |\n" +
+                          "    ||        |\n" +
+                          "      ___  ___ ";
+        String actual = int2LCD.getNumberAsLCDStringRenderedValue(123);
+
+        Assert.assertEquals(expected, actual);
+    }
 }
