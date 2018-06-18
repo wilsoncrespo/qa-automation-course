@@ -2,6 +2,20 @@ package edu.alsie.tdd.int2lcd;
 
 public class Int2LCD {
 
+    private int width;
+    private int height;
+
+    public Int2LCD()
+    {
+        this(1, 1);
+    }
+
+    public Int2LCD(int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+    }
+
     public int[] getEmptyLCDCell() {
         return new int[7];
     }
