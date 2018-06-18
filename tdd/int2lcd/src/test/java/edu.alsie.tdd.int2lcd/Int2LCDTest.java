@@ -402,7 +402,7 @@ public class Int2LCDTest {
          */
         int[][] expected = {{0,0,0,1,0,0,1}, {1,0,1,1,1,1,0}, {1,0,1,1,0,1,1}};
 
-        int[][] actual = getNumberAsLCDList(123);
+        int[][] actual = int2LCD.getNumberAsLCDList(123);
 
         Assert.assertArrayEquals(expected, actual);
     }
