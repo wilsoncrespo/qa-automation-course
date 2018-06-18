@@ -160,6 +160,16 @@ public class Int2LCD {
 
     public String[][] getNumberAsLCDStringValue(int number)
     {
+        int[][] lcdValues = getNumberAsLCDList(number);
+        String[][] lcdValuesAsString = new String[lcdValues.length][3];
+        for (int i = 0; i < lcdValues.length; i++) {
+            lcdValuesAsString[i] = convertValuesToString(lcdValues[i]);
+        }
+        return lcdValuesAsString;
+    }
+
+    public String getNumberAsLCDStringRenderedValue(int number)
+    {
         return null;
     }
 }

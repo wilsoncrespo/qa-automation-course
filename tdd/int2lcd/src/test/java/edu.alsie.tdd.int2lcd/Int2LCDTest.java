@@ -424,4 +424,22 @@ public class Int2LCDTest {
 
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testGet123AsLCDStringRenderedValue()
+    {
+        Int2LCD int2LCD = new Int2LCD();
+        /**
+         *
+         *     _  _             0    1    1
+         *   | _| _|    =>    0 0 10 1 10 1 1    =>    [[0001001], [1011110], [1011011]]
+         *   ||_  _|          0 0 11 1 00 1 1
+         *
+         */
+        String expected = "    _  _ \n  | _| _|\n  ||_  _|";
+
+        String actual = int2LCD.getNumberAsLCDStringRenderedValue(123);
+
+        Assert.assertEquals(expected, actual);
+    }
 }
