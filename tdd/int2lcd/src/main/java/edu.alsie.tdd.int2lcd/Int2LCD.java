@@ -122,4 +122,39 @@ public class Int2LCD {
     {
         return (left == 1 ? "|" : " ") + (central == 1 ? "_" : " ") + (right == 1 ? "|" : " ");
     }
+
+    public int[][] getNumberAsLCDList(int number)
+    {
+        int digitsLength = ((int) Math.log10((double) number)) + 1;
+        int[][] lcdList = new int[digitsLength][7];
+        int n = number;
+        int i = digitsLength - 1;
+        while (n > 0)
+        {
+            int digit = n % 10;
+            int[] digitAsLCDList = getNumberAsLCDCell(digit);
+            lcdList[i] = digitAsLCDList;
+            n = n / 10;
+            i--;
+        }
+        return lcdList;
+    }
+
+    private int[] getNumberAsLCDCell(int digit)
+    {
+        switch (digit)
+        {
+            case 0 : return getZeroLCDCell();
+            case 1 : return getOneLCDCell();
+            case 2 : return getTwoLCDCell();
+            case 3 : return getThreeLCDCell();
+            case 4 : return getFourLCDCell();
+            case 5 : return getFiveLCDCell();
+            case 6 : return getSixLCDCell();
+            case 7 : return getSevenLCDCell();
+            case 8 : return getEightLCDCell();
+            case 9 : return getNineLCDCell();
+            default: return new int[7];
+        }
+    }
 }
