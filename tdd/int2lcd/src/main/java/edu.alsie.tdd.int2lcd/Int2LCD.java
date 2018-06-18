@@ -170,6 +170,14 @@ public class Int2LCD {
 
     public String getNumberAsLCDStringRenderedValue(int number)
     {
-        return null;
+        String numberAsLCDStringRenderedValue = "";
+        String[][] numberAsLCDStringValue = getNumberAsLCDStringValue(number);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < numberAsLCDStringValue.length; j++) {
+                numberAsLCDStringRenderedValue += numberAsLCDStringValue[j][i];
+            }
+            numberAsLCDStringRenderedValue += "\n";
+        }
+        return numberAsLCDStringRenderedValue.substring(0, numberAsLCDStringRenderedValue.length() - 1);
     }
 }
