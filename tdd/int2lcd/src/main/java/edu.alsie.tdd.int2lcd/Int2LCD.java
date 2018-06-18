@@ -157,4 +157,9 @@ public class Int2LCD {
             default: return new int[7];
         }
     }
+
+    public String[][] getNumberAsLCDStringValue(int number)
+    {
+        return null;
+    }
 }
