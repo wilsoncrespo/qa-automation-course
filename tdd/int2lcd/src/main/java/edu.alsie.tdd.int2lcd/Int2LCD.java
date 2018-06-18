@@ -112,29 +112,74 @@ public class Int2LCD {
 
     private String[] convertValuesToString(int[] lcdCellValue)
     {
-        String[] stringCellValue = new String[3];
+        int totalHeight = getCalculatedHeight();
+        int secondSegmentStart = 1;
+        int secondSegmentEnd = (totalHeight - 1) / 2;
+        int thirdSegmentStart = secondSegmentEnd + 1;
+        int thirdSegmentEnd = totalHeight - 1;
+        String[] stringCellValue = new String[totalHeight];
         for (int i = 0; i < lcdCellValue.length; i++) {
             if (i == 0)
             {
-                stringCellValue[0] = getStringRow(0, lcdCellValue[i], 0);
+                stringCellValue[0] = getDigitStringRow(0, lcdCellValue[i], 0);
             }
             if (i == 1)
             {
-                stringCellValue[1] = getStringRow(lcdCellValue[i], lcdCellValue[i+1], lcdCellValue[i+2]);
+                if (secondSegmentEnd == 1)
+                {
+                    stringCellValue[1] = getDigitStringRow(lcdCellValue[i], lcdCellValue[i+1], lcdCellValue[i+2]);
+                } else
+                {
+                    for (int j = secondSegmentStart; j < secondSegmentEnd; j++) {
+                        stringCellValue[j] = getDigitStringRow(lcdCellValue[i], 0, lcdCellValue[i+2]);
+                    }
+                    stringCellValue[secondSegmentEnd] = getDigitStringRow(0, lcdCellValue[i+1], 0);
+                }
                 i += 2;
             }
             if (i == 4)
             {
-                stringCellValue[2] = getStringRow(lcdCellValue[i], lcdCellValue[i+1], lcdCellValue[i+2]);
+                if (thirdSegmentEnd == 2)
+                {
+                    stringCellValue[2] = getDigitStringRow(lcdCellValue[i], lcdCellValue[i+1], lcdCellValue[i+2]);
+                }
+                else
+                {
+                    for (int j = thirdSegmentStart; j < thirdSegmentEnd; j++) {
+                        stringCellValue[j] = getDigitStringRow(lcdCellValue[i], 0, lcdCellValue[i+2]);
+                    }
+                    stringCellValue[thirdSegmentEnd] = getDigitStringRow(0, lcdCellValue[i+1], 0);
+                }
                 i += 2;
             }
         }
         return stringCellValue;
     }
 
-    private String getStringRow(int left, int central, int right)
+    private String getDigitStringRow(int left, int central, int right)
     {
-        return (left == 1 ? "|" : " ") + (central == 1 ? "_" : " ") + (right == 1 ? "|" : " ");
+        if (width == 1 && height == 1)
+        {
+            return (left == 1 ? "|" : " ") + (central == 1 ? "_" : " ") + (right == 1 ? "|" : " ");
+        }
+        String stringRow = "";
+        if (left == 1 || right == 1)
+        {
+            stringRow += (left == 1 ? "|" : " ") + getHorizontalLine(" ") + (right == 1 ? "|" : " ");
+        } else
+        {
+            stringRow += " " + (central == 1 ? getHorizontalLine("_") : getHorizontalLine(" ")) + " ";
+        }
+        return stringRow;
+    }
+
+    private String getHorizontalLine(String value)
+    {
+        String horizontalLine = "";
+        for (int i = 0; i < width; i++) {
+            horizontalLine += value;
+        }
+        return horizontalLine;
     }
 
     public int[][] getNumberAsLCDList(int number)
@@ -175,7 +220,7 @@ public class Int2LCD {
     public String[][] getNumberAsLCDStringValue(int number)
     {
         int[][] lcdValues = getNumberAsLCDList(number);
-        String[][] lcdValuesAsString = new String[lcdValues.length][3];
+        String[][] lcdValuesAsString = new String[lcdValues.length][getCalculatedHeight()];
         for (int i = 0; i < lcdValues.length; i++) {
             lcdValuesAsString[i] = convertValuesToString(lcdValues[i]);
         }
@@ -186,12 +231,17 @@ public class Int2LCD {
     {
         String numberAsLCDStringRenderedValue = "";
         String[][] numberAsLCDStringValue = getNumberAsLCDStringValue(number);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < getCalculatedHeight(); i++) {
             for (int j = 0; j < numberAsLCDStringValue.length; j++) {
                 numberAsLCDStringRenderedValue += numberAsLCDStringValue[j][i];
             }
             numberAsLCDStringRenderedValue += "\n";
         }
         return numberAsLCDStringRenderedValue.substring(0, numberAsLCDStringRenderedValue.length() - 1);
+    }
+
+    private int getCalculatedHeight()
+    {
+        return height > 1 ? ((height * 2) + 3) : 3;
     }
 }
